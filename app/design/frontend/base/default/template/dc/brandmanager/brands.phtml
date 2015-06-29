@@ -1,0 +1,90 @@
+<?php
+/**
+ * Dc_BrandManager
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   Dc
+ * @package    Dc_BrandManager
+ * @copyright  Copyright (c) 2015 Damián Culotta. (http://www.damianculotta.com.ar/)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php
+$_list_mode = $this->getListMode();
+$_display_type = $this->getDisplayType();
+if ($_list_mode == Dc_BrandManager_Model_System_Config_Source_Mode::MODE_GRID): ?>
+    <?php $i = 0; ?>
+    <table id="brand-manager-brands">
+        <?php foreach ($this->getBrands() as $brand): ?>
+            <?php if ($i++%$this->getBrandsByLine()==0): ?>
+                <tr>
+            <?php endif; ?>
+                <td>
+                    <a href="<?php echo $brand->getUrl(); ?>">
+                        <?php if ($_display_type == Dc_BrandManager_Model_System_Config_Source_Display::IMAGE): ?>
+                            <img src="<?php echo $this->getImageUrl($brand->getBrandIcon()); ?>" alt="<?php echo $brand->getName(); ?>" title="<?php echo $brand->getName(); ?>" />
+                        <?php else: ?>
+                            <?php echo $brand->getName(); ?>
+                        <?php endif; ?>
+                    </a>
+                </td>
+            <?php if ($i%$this->getBrandsByLine() == 0 && $i != $this->getBrands()->count()): ?>
+                </tr>
+            <?php endif ?>
+        <?php endforeach ?>
+        <?php for($i; $i%$this->getBrandsByLine() != 0; $i++): ?>
+            <td>&nbsp;</td>
+        <?php endfor ?>
+        <?php if ($i%$this->getBrandsByLine() == 0): ?>
+            </tr>
+        <?php endif ?>
+    </table>
+<?php else: ?>
+    <?php $i = 0; ?>
+    <?php $_group_by_letter = $this->getGroupByLetter(); ?>
+    <?php if ($_group_by_letter == 1) : ?>
+        <ul id="brand-manager-brands">
+            <?php $_selected_letter = null; ?>
+            <?php foreach ($this->getBrands() as $brand): ?>
+                <?php $_current_letter = substr($brand->getName(), 0, 1); ?>
+                <?php if ($_selected_letter != $_current_letter) : ?>
+                    <li class="letter-<?php echo $_current_letter; ?>">Letter <?php echo strtoupper($_current_letter); ?>
+                        <ul>
+                <?php endif; ?>
+                        <li>
+                            <a href="<?php echo $brand->getUrl(); ?>">
+                                <?php if ($_display_type == Dc_BrandManager_Model_System_Config_Source_Display::IMAGE): ?>
+                                    <img src="<?php echo $this->getImageUrl($brand->getBrandIcon()); ?>" alt="<?php echo $brand->getName(); ?>" title="<?php echo $brand->getName(); ?>" />
+                                <?php else: ?>
+                                    <?php echo $brand->getName(); ?>
+                                <?php endif; ?>
+                            </a>
+                        </li>
+                <?php if ($_selected_letter != $_current_letter) : ?>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+                <?php $_selected_letter = $_current_letter; ?>
+            <?php endforeach ?>
+        </ul>
+    <?php else: ?>
+        <ul id="brand-manager-brands">
+            <?php foreach ($this->getBrands() as $brand): ?>
+                <li>
+                    <a href="<?php echo $brand->getUrl(); ?>">
+                        <?php if ($_display_type == Dc_BrandManager_Model_System_Config_Source_Display::IMAGE): ?>
+                            <img src="<?php echo $this->getImageUrl($brand->getBrandIcon()); ?>" alt="<?php echo $brand->getName(); ?>" title="<?php echo $brand->getName(); ?>" />
+                        <?php else: ?>
+                            <?php echo $brand->getName(); ?>
+                        <?php endif; ?>
+                    </a>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    <?php endif; ?>
+<?php endif; ?>
