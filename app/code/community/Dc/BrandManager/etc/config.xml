@@ -18,9 +18,31 @@
 <config>
     <modules>
         <Dc_BrandManager>
-            <version>0.2.0</version>
+            <version>0.3.0</version>
         </Dc_BrandManager>
     </modules>
+    <adminhtml>
+        <translate>
+            <modules>
+                <brandmanager>
+                    <files>
+                        <default>Dc_BrandManager.csv</default>
+                    </files>
+                </brandmanager>
+            </modules>
+        </translate>
+    </adminhtml>
+    <frontend>
+        <translate>
+            <modules>
+                <brandmanager>
+                    <files>
+                        <default>Dc_BrandManager.csv</default>
+                    </files>
+                </brandmanager>
+            </modules>
+        </translate>
+    </frontend>
 	<global>
 	    <blocks>
 	        <brandmanager>
