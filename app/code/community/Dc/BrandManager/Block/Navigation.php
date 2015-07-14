@@ -10,14 +10,17 @@
  *
  * @category   Dc
  * @package    Dc_BrandManager
- * @copyright  Copyright (c) 2015 Damián Culotta. (http://www.damianculotta.com.ar/)
+ * @copyright  Copyright (c) 2012-2015 Damián Culotta. (http://www.damianculotta.com.ar/)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
 class Dc_BrandManager_Block_Navigation extends Mage_Catalog_Block_Navigation
 {
 
-    protected $_brandmanager_category_id;
+    /**
+     * @var
+     */
+    protected $brandmanager_category_id;
 
     protected function _construct()
     {
@@ -25,9 +28,20 @@ class Dc_BrandManager_Block_Navigation extends Mage_Catalog_Block_Navigation
             'cache_lifetime' => false,
             'cache_tags' => array(Mage_Catalog_Model_Category::CACHE_TAG, Mage_Core_Model_Store_Group::CACHE_TAG),
         ));
-        $this->_brandmanager_category_id = Mage::app()->getStore()->getConfig('brandmanager/settings/category');
+        $this->brandmanager_category_id = Mage::app()->getStore()->getConfig('brandmanager/settings/category');
     }
 
+    /**
+     * @param Mage_Catalog_Model_Category $category
+     * @param int $level
+     * @param bool $isLast
+     * @param bool $isFirst
+     * @param bool $isOutermost
+     * @param string $outermostItemClass
+     * @param string $childrenWrapClass
+     * @param bool $noEventAttributes
+     * @return array|string
+     */
     protected function _renderCategoryMenuItemHtml($category, $level = 0, $isLast = false, $isFirst = false,
         $isOutermost = false, $outermostItemClass = '', $childrenWrapClass = '', $noEventAttributes = false)
     {
@@ -125,7 +139,7 @@ class Dc_BrandManager_Block_Navigation extends Mage_Catalog_Block_Navigation
             }
             $html[] = '<ul class="level' . $level . '">';
             $html[] = $htmlChildren;
-            if ($this->_brandmanager_category_id == $category->getId()) {
+            if ($this->brandmanager_category_id == $category->getId()) {
                 $html[] = '<li class="view-all-link">';
                 $html[] = '<a href="'.$this->getCategoryUrl($category).'"'.$linkClass.'>';
                 $html[] = '<span>View All</span>';
