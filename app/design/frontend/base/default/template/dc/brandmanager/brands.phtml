@@ -17,7 +17,8 @@
 <?php
 $_list_mode = $this->getListMode();
 $_display_type = $this->getDisplayType();
-if ($_list_mode == Dc_BrandManager_Model_System_Config_Source_Mode::MODE_GRID): ?>
+?>
+<?php if ($_list_mode == Dc_BrandManager_Model_System_Config_Source_Mode::MODE_GRID): ?>
     <?php $i = 0; ?>
     <table id="brand-manager-brands">
         <?php foreach ($this->getBrands() as $brand): ?>
