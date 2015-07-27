@@ -20,12 +20,31 @@ $_display_type = $this->getDisplayType();
 ?>
 <?php if ($_list_mode == Dc_BrandManager_Model_System_Config_Source_Mode::MODE_GRID): ?>
     <?php $i = 0; ?>
-    <table id="brand-manager-brands">
+    <style>
+        .brand-list .brand-row {
+          margin-bottom: 1em;
+          display: table;
+            width: 100%;
+        }
+        .brand-list .brand-row li {
+          display: table-cell;
+          text-align: center;
+          vertical-align: middle;
+          width: <?php echo (100 / $this->getBrandsByLine() ) .'%'; ?>;
+        }
+        .brand-list .brand-row li a {
+            display: inline-block;
+        }
+        .brand-list .brand-row li a img {
+            max-width: 100%;
+        }
+    </style>
+    <div id="brand-manager-brands" class="brand-list">
         <?php foreach ($this->getBrands() as $brand): ?>
             <?php if ($i++%$this->getBrandsByLine()==0): ?>
-                <tr>
+                <ul class="brand-row">
             <?php endif; ?>
-                <td>
+                <li>
                     <a href="<?php echo $brand->getUrl(); ?>">
                         <?php if ($_display_type == Dc_BrandManager_Model_System_Config_Source_Display::IMAGE): ?>
                             <img src="<?php echo $this->getImageUrl($brand->getBrandIcon()); ?>" alt="<?php echo $brand->getName(); ?>" title="<?php echo $brand->getName(); ?>" />
@@ -33,18 +52,12 @@ $_display_type = $this->getDisplayType();
                             <?php echo $brand->getName(); ?>
                         <?php endif; ?>
                     </a>
-                </td>
+                </li>
             <?php if ($i%$this->getBrandsByLine() == 0 && $i != $this->getBrands()->count()): ?>
-                </tr>
+                </ul>
             <?php endif ?>
         <?php endforeach ?>
-        <?php for($i; $i%$this->getBrandsByLine() != 0; $i++): ?>
-            <td>&nbsp;</td>
-        <?php endfor ?>
-        <?php if ($i%$this->getBrandsByLine() == 0): ?>
-            </tr>
-        <?php endif ?>
-    </table>
+    </div>
 <?php else: ?>
     <?php $i = 0; ?>
     <?php $_group_by_letter = $this->getGroupByLetter(); ?>
