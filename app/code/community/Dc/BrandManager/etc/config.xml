@@ -43,18 +43,18 @@
             </modules>
         </translate>
     </frontend>
-	<global>
-	    <blocks>
-	        <brandmanager>
-	            <class>Dc_BrandManager_Block</class>
-	        </brandmanager>
-	        <catalog>
-	            <rewrite>
-	                <navigation>Dc_BrandManager_Block_navigation</navigation>
-	            </rewrite>
-	        </catalog>
+    <global>
+        <blocks>
+            <brandmanager>
+                <class>Dc_BrandManager_Block</class>
+            </brandmanager>
+            <catalog>
+                <rewrite>
+                    <navigation>Dc_BrandManager_Block_navigation</navigation>
+                </rewrite>
+            </catalog>
         </blocks>
-		<helpers>
+        <helpers>
             <brandmanager>
                 <class>Dc_BrandManager_Helper</class>
             </brandmanager>

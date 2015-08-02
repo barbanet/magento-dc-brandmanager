@@ -17,7 +17,7 @@
 -->
 <config>
     <sections>
-		<brandmanager translate="label" module="brandmanager">
+        <brandmanager translate="label" module="brandmanager">
             <label>Brand Manager</label>
             <tab>dc</tab>
             <sort_order>1005</sort_order>

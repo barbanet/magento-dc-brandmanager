@@ -34,7 +34,7 @@ class Dc_BrandManager_Block_Brands extends Mage_Core_Block_Template
      */
     public function getBrandsByLine()
     {
-    	return Mage::app()->getStore()->getConfig('brandmanager/settings/brands_per_line');
+        return Mage::app()->getStore()->getConfig('brandmanager/settings/brands_per_line');
     }
 
     /**
@@ -44,7 +44,7 @@ class Dc_BrandManager_Block_Brands extends Mage_Core_Block_Template
      */
     public function getListMode()
     {
-    	return Mage::app()->getStore()->getConfig('brandmanager/settings/list_mode');
+        return Mage::app()->getStore()->getConfig('brandmanager/settings/list_mode');
     }
 
     /**
