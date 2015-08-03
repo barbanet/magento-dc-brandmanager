@@ -53,7 +53,7 @@ $_display_type = $this->getDisplayType();
                         <?php endif; ?>
                     </a>
                 </li>
-            <?php if ($i%$this->getBrandsByLine() == 0 && $i != $this->getBrands()->count()): ?>
+            <?php if ($i % $this->getBrandsByLine() == 0 && $i != $this->getBrands()->count()): ?>
                 </ul>
             <?php endif ?>
         <?php endforeach ?>
@@ -67,7 +67,7 @@ $_display_type = $this->getDisplayType();
             <?php foreach ($this->getBrands() as $brand): ?>
                 <?php $_current_letter = substr($brand->getName(), 0, 1); ?>
                 <?php if ($_selected_letter != $_current_letter) : ?>
-                    <li class="letter-<?php echo $_current_letter; ?>">Letter <?php echo strtoupper($_current_letter); ?>
+                    <li class="letter-<?php echo $_current_letter; ?>"><?php echo strtoupper($_current_letter); ?>
                         <ul>
                 <?php endif; ?>
                         <li>
