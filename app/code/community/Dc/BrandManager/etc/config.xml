@@ -18,7 +18,7 @@
 <config>
     <modules>
         <Dc_BrandManager>
-            <version>0.3.0</version>
+            <version>0.4.0</version>
         </Dc_BrandManager>
     </modules>
     <adminhtml>
@@ -42,6 +42,13 @@
                 </brandmanager>
             </modules>
         </translate>
+        <layout>
+            <updates>
+                <brandmanager>
+                    <file>dc/brandmanager.xml</file>
+                </brandmanager>
+            </updates>
+        </layout>
     </frontend>
     <global>
         <blocks>
