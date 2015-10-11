@@ -29,7 +29,10 @@ $_display_type = $this->getDisplayType();
                     <a href="<?php echo $brand->getUrl(); ?>">
                         <?php if ($_display_type == Dc_BrandManager_Model_System_Config_Source_Display::IMAGE): ?>
                             <img src="<?php echo $this->getImageUrl($brand->getBrandIcon()); ?>" alt="<?php echo $brand->getName(); ?>" title="<?php echo $brand->getName(); ?>" />
+                        <?php elseif ($_display_type == Dc_BrandManager_Model_System_Config_Source_Display::NAME): ?>
+                            <?php echo $brand->getName(); ?>
                         <?php else: ?>
+                            <img src="<?php echo $this->getImageUrl($brand->getBrandIcon()); ?>" alt="<?php echo $brand->getName(); ?>" title="<?php echo $brand->getName(); ?>" />
                             <?php echo $brand->getName(); ?>
                         <?php endif; ?>
                     </a>
@@ -55,7 +58,10 @@ $_display_type = $this->getDisplayType();
                             <a href="<?php echo $brand->getUrl(); ?>">
                                 <?php if ($_display_type == Dc_BrandManager_Model_System_Config_Source_Display::IMAGE): ?>
                                     <img src="<?php echo $this->getImageUrl($brand->getBrandIcon()); ?>" alt="<?php echo $brand->getName(); ?>" title="<?php echo $brand->getName(); ?>" />
+                                <?php elseif ($_display_type == Dc_BrandManager_Model_System_Config_Source_Display::NAME): ?>
+                                    <?php echo $brand->getName(); ?>
                                 <?php else: ?>
+                                    <img src="<?php echo $this->getImageUrl($brand->getBrandIcon()); ?>" alt="<?php echo $brand->getName(); ?>" title="<?php echo $brand->getName(); ?>" />
                                     <?php echo $brand->getName(); ?>
                                 <?php endif; ?>
                             </a>
@@ -74,7 +80,10 @@ $_display_type = $this->getDisplayType();
                     <a href="<?php echo $brand->getUrl(); ?>">
                         <?php if ($_display_type == Dc_BrandManager_Model_System_Config_Source_Display::IMAGE): ?>
                             <img src="<?php echo $this->getImageUrl($brand->getBrandIcon()); ?>" alt="<?php echo $brand->getName(); ?>" title="<?php echo $brand->getName(); ?>" />
+                        <?php elseif ($_display_type == Dc_BrandManager_Model_System_Config_Source_Display::NAME): ?>
+                            <?php echo $brand->getName(); ?>
                         <?php else: ?>
+                            <img src="<?php echo $this->getImageUrl($brand->getBrandIcon()); ?>" alt="<?php echo $brand->getName(); ?>" title="<?php echo $brand->getName(); ?>" />
                             <?php echo $brand->getName(); ?>
                         <?php endif; ?>
                     </a>

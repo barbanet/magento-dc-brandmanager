@@ -16,8 +16,9 @@
 
 class Dc_BrandManager_Model_System_Config_Source_Display
 {
-    const NAME = '1';
+    const NAME  = '1';
     const IMAGE = '2';
+    const BOTH  = '3';
     
     public function toOptionArray()
     {
@@ -29,6 +30,10 @@ class Dc_BrandManager_Model_System_Config_Source_Display
             array(
                 'value' => self::IMAGE,
                 'label' => Mage::helper('brandmanager')->__('Image')
+            ),
+            array(
+                'value' => self::BOTH,
+                'label' => Mage::helper('brandmanager')->__('Both')
             )
         );
     }
