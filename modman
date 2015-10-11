@@ -1,7 +1,6 @@
 skin/adminhtml/default/default/dc/dc/images/module.png skin/adminhtml/default/default/dc/dc/images/module.png
 skin/adminhtml/default/default/dc/dc/css/style.css skin/adminhtml/default/default/dc/dc/css/style.css
 skin/frontend/base/default/dc/brandmanager/css/style.css skin/frontend/base/default/dc/brandmanager/css/style.css
-README.md README.md
 app/design/adminhtml/default/default/layout/dc/dc.xml app/design/adminhtml/default/default/layout/dc/dc.xml
 app/design/frontend/base/default/layout/dc/brandmanager.xml app/design/frontend/base/default/layout/dc/brandmanager.xml
 app/design/frontend/base/default/template/dc/brandmanager/brands.phtml app/design/frontend/base/default/template/dc/brandmanager/brands.phtml
@@ -30,5 +29,3 @@ app/code/community/Dc/Dc/Helper/Data.php app/code/community/Dc/Dc/Helper/Data.ph
 app/code/community/Dc/Dc/etc/config.xml app/code/community/Dc/Dc/etc/config.xml
 app/code/community/Dc/Dc/etc/system.xml app/code/community/Dc/Dc/etc/system.xml
 app/code/community/Dc/Dc/etc/adminhtml.xml app/code/community/Dc/Dc/etc/adminhtml.xml
-LICENSE LICENSE
-makemod makemod
