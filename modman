@@ -4,6 +4,7 @@ app/code/community/Dc/Dc/etc/system.xml app/code/community/Dc/Dc/etc/system.xml
 app/code/community/Dc/Dc/etc/config.xml app/code/community/Dc/Dc/etc/config.xml
 app/code/community/Dc/Dc/etc/adminhtml.xml app/code/community/Dc/Dc/etc/adminhtml.xml
 app/code/community/Dc/BrandManager/data/brandmanager_setup/data-install-0.1.0.php app/code/community/Dc/BrandManager/data/brandmanager_setup/data-install-0.1.0.php
+app/code/community/Dc/BrandManager/data/brandmanager_setup/data-upgrade-1.0.0-1.0.1.php app/code/community/Dc/BrandManager/data/brandmanager_setup/data-upgrade-1.0.0-1.0.1.php
 app/code/community/Dc/BrandManager/sql/brandmanager_setup/upgrade-0.1.0-0.2.0.php app/code/community/Dc/BrandManager/sql/brandmanager_setup/upgrade-0.1.0-0.2.0.php
 app/code/community/Dc/BrandManager/Helper/Data.php app/code/community/Dc/BrandManager/Helper/Data.php
 app/code/community/Dc/BrandManager/Block/Navigation.php app/code/community/Dc/BrandManager/Block/Navigation.php
